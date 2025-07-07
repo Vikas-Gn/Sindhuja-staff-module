@@ -5,7 +5,7 @@ services:
     image: postgres:13
     container_name: postgres1
     ports:
-      - "5008:5432"
+      - "5209:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin123
@@ -21,7 +21,7 @@ services:
       context: ./Backend
     container_name: backend
     ports:
-      - "3040:3040"
+      - "3209:3209"
     depends_on:
       - postgres
     networks:
@@ -32,7 +32,7 @@ services:
       context: ./HR-staff
     container_name: hr-staff
     ports:
-      - "8046:80"
+      - "8018:80"
     depends_on:
       - backend
     networks:
